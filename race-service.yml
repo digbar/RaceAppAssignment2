@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: race-service
+  datasource:
+    url: jdbc:h2:mem:races
+    username: sa
+    password:
