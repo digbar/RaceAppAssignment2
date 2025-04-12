@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: runner-service
+  datasource:
+    url: jdbc:h2:mem:runners
+    username: sa
+    password:
+  config:
+    label: main
