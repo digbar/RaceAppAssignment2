@@ -2,8 +2,14 @@ spring:
   application:
     name: runner-service
   datasource:
-    url: jdbc:h2:mem:runners
-    username: sa
-    password:
+    url: jdbc:mysql://localhost:3306/runnerdb
+    username: runnerAdmin
+    password=: est1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate.ddl: auto=update
+# --- Show SQL Queries in Console (Optional) ---
+    show-sql: true
   config:
     label: main
