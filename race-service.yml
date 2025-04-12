@@ -13,3 +13,5 @@ spring:
     show-sql: true
   config:
     label: main
+server:
+  port: 8081
