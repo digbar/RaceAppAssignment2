@@ -19,7 +19,3 @@ spring:
     show-sql: true
   config:
     label: main
-management:
-  tracing:
-    sampling:
-      probability: 1.0
