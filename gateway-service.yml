@@ -20,10 +20,7 @@ spring:
               args:
                 name: runnerCircuitBreaker
                 fallbackUri: forward:/fallback/runners
-management:
-  tracing:
-    sampling:
-      probability: 1.0
+
 resilience4j:
   circuitbreaker:
     instances:
