@@ -14,3 +14,5 @@ spring:
           uri: lb://race-service
           predicates:
             - Path=/api/races/**
+server:
+  port: 8082
