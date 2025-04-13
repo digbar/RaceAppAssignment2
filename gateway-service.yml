@@ -9,6 +9,8 @@ spring:
       probability: 1.0
   cloud:
     gateway:
+      default-filters:
+        - TokenRelay
       routes:
         - id: runner-service
           uri: lb://runner-service
