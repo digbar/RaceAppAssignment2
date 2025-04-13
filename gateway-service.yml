@@ -1,7 +1,6 @@
 spring:
   application:
     name: gateway-service
-
   cloud:
     gateway:
       routes:
@@ -14,7 +13,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: runnerCircuitBreaker
-                fallbackUri: forward:/fallback/runners
+                fallbackUri: forward:/fallback/runnersrs
 resilience4j.circuitbreaker:
   instances:
     runnerCircuitBreaker:
