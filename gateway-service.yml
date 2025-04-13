@@ -16,17 +16,6 @@ spring:
                 name: runnerCircuitBreaker
                 fallbackUri: forward:/fallback/runners
 
-        - id: race-service
-          uri: lb://race-service
-          predicates:
-            - Path=/tusrunning/api/races/**
-          filters:
-            - RewritePath=/tusrunning/api/(?<segment>.*), /api/${segment}
-            - name: CircuitBreaker
-              args:
-                name: raceCircuitBreaker
-                fallbackUri: forward:/fallback/runners
-
 resilience4j:
   circuitbreaker:
     instances:
