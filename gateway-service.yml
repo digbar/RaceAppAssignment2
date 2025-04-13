@@ -15,5 +15,14 @@ spring:
               args:
                 name: runnerCircuitBreaker
                 fallbackUri: forward:/fallback/runners
+resilience4j.circuitbreaker:
+  instances:
+    runnerCircuitBreaker:
+      registerHealthIndicator: true
+      slidingWindowSize: 5
+      permittedNumberOfCallsInHalfOpenState: 3
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10s
+
 server:
   port: 9999
