@@ -20,6 +20,10 @@ spring:
             - Path=/tusrunning/api/races/**
           filters:
             - RewritePath=/tusrunning/api/(?<segment>.*), /api/${segment}
+            - name: CircuitBreaker
+              args:
+                name: runnerCircuitBreaker
+                fallbackUri: forward:/fallback/runners
 resilience4j.circuitbreaker:
   instances:
     runnerCircuitBreaker:
