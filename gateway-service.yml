@@ -11,13 +11,9 @@ spring:
             - Path=/tusrunning/api/runners/**
           filters:
             - RewritePath=/tusrunning/api/(?<segment>.*), /api/${segment}
-
-        - id: race-service
-          uri: lb://race-service
-          predicates:
-            - Path=/tusrunning/api/races/**
-          filters:
-            - RewritePath=/tusrunning/api/(?<segment>.*), /api/${segment}
-
+            - name: CircuitBreaker
+              args:
+                name: runnerCircuitBreaker
+                fallbackUri: forward:/fallback/runners
 server:
   port: 9999
