@@ -23,6 +23,7 @@ spring:
             - Path=/tusrunning/api/runners/**
           filters:
             - RewritePath=/tusrunning/api/(?<segment>.*), /api/${segment}
+             - TokenRelay
             - name: CircuitBreaker
               args:
                 name: runnerCircuitBreaker
