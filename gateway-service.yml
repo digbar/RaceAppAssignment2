@@ -20,10 +20,10 @@ spring:
         - id: runner-service
           uri: lb://runner-service
           predicates:
-            - Path=/tusrunning/api/runners/**
+            - Path=/tusrunning/**
           filters:
             - TokenRelay
-            - RewritePath=/tusrunning/api/(?<segment>.*), /api/${segment}
+            - RewritePath=/tusrunning/(?<segment>.*), /api/${segment}
             - name: CircuitBreaker
               args:
                 name: runnerCircuitBreaker
