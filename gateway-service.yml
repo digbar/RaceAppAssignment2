@@ -3,18 +3,5 @@ spring:
     name: gateway-service
   main:
     web-application-type: reactive
-
-  cloud:
-    gateway:
-      routes:
-        - id: runner-service
-          uri: lb://runner-service
-          predicates:
-            - Path=/api/runners/**
-
-        - id: race-service
-          uri: lb://race-service
-          predicates:
-            - Path=/api/races/**
 server:
   port: 8082
