@@ -13,7 +13,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: runnerCircuitBreaker
-                fallbackUri: forward:/fallback/runnersrs
+                fallbackUri: forward:/fallback/runners
         - id: race-service
           uri: lb://race-service
           predicates:
