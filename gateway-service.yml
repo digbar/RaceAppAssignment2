@@ -14,15 +14,12 @@ spring:
           jwk-set-uri: http://localhost:9900/realms/microservices/protocol/openid-connect/certs
   cloud:
     gateway:
-      default-filters:
-        - TokenRelay
       routes:
         - id: runner-service
           uri: lb://runner-service
           predicates:
             - Path=/tusrunning/**
           filters:
-            - TokenRelay
             - RewritePath=/tusrunning/(?<segment>.*), /${segment}
             - name: CircuitBreaker
               args:
