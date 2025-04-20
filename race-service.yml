@@ -21,8 +21,6 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate.ddl: auto=update
     show-sql: true
-# --- Show SQL Queries in Console (Optional) ---
-    show-sql: true
   config:
     label: main
 server:
