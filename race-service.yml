@@ -12,14 +12,15 @@ spring:
   sleuth:
     sampler:
       probability: 1.0
-  datasource:
-    url: jdbc:mysql://localhost:3306/runnerdb
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/runnerdb
     username: runnerAdmin
-    password=: test1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: test1234
+
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate.ddl: auto=update
+    show-sql: true
 # --- Show SQL Queries in Console (Optional) ---
     show-sql: true
   config:
